@@ -125,7 +125,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\src\app\about\about.js" />
+    <Content Include="Client\src\app\about\about.tpl.html" />
     <Content Include="Client\src\app\app.js" />
+    <Content Include="Client\src\app\home\home.tpl.html" />
+    <Content Include="Client\src\app\home\home.js" />
     <Content Include="Client\src\index.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\jasmine\jasmine.css" />
@@ -473,7 +477,7 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
-    <Content Include="Client\src\app\header.tpl" />
+    <Content Include="Client\src\app\header.tpl.html" />
     <None Include="Scripts\vendor\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.min.js" />
@@ -518,8 +522,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\src\app\about\" />
-    <Folder Include="Client\src\app\home\" />
     <Folder Include="Client\src\assets\" />
     <Folder Include="Client\src\common\directives\" />
     <Folder Include="Client\src\common\security\login\" />
