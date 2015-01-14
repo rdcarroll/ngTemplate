@@ -21,16 +21,33 @@ Del %_projectDir%\dist\*.* /q
 @REM Start post-build processing
 :StartProcessing
 echo Starting post-build processing.
+if not exist %_projectDir%dist\css mkdir %_projectDir%dist\css
 
-
-@REM Concat app JS files to dist/ngApp.js
+echo Concat app JS files to dist/ngApp.js
 cd /d %_projectDir%\Client\src\app && call :ConcatFiles
 
-@REM Make Angular templateCache and Concat to dist/ngApp.js
+echo Make Angular templateCache and Concat to dist/ngApp.js
 call :TemplateMaker
 
-@REM Concat common JS files to dist/ngApp.js
+echo Concat common JS files to dist/ngApp.js
 cd /d %_projectDir%\Client\src\common && call :ConcatFiles
+
+cd /d %_projectDir%\Client
+
+echo Move CSS to dist/css/ngApp.css
+set srcs=vendor\app.css
+set distpath=css\ngApp.css
+for %%i in (%srcs%) do call :ConcatFiles2 %%i %distpath%
+
+echo Move Angular to dist/angular.js
+set srcs=vendor\angular\angular.js vendor\angular\angular-ui-router.js
+set distpath=angular.js
+for %%i in (%srcs%) do call :ConcatFiles2 %%i %distpath%
+
+echo Move Assets to dist/
+set srcs=src\assets
+set distpath=
+for %%i in (%srcs%) do call :MoveFilesFromDir %%i %distpath%
 
 goto PostBuildSuccess
 
@@ -42,6 +59,16 @@ for /f "tokens=*" %%a in ('dir /s /b') do (
 
 	if !ext!==.js if "!file:.spec=!"=="!file!" type %%~sa >> %_projectDir%\dist\ngApp.js & echo. >> %_projectDir%\dist\ngApp.js
 )
+exit /B
+
+:ConcatFiles2
+setlocal enabledelayedexpansion
+	type %CD%\%~1 >> %_projectDir%dist\%~2
+exit /B
+
+:MoveFilesFromDir
+setlocal enabledelayedexpansion
+	copy %CD%\%~1 %_projectDir%dist\
 exit /B
 
 :TemplateMaker

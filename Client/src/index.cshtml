@@ -6,7 +6,7 @@
     <title ng-bind="title">AngularJS SPA Template for Visual Studio</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    @Styles.Render("~/css/app")
+    <link rel="stylesheet" type="text/css" href="~/dist/css/ngApp.css" />
 </head>
 <body>
     <!--[if lt IE 9]>
@@ -15,13 +15,13 @@
 
 
 
-<div ng-include="'header.tpl.html'"></div>
-<div ui-view id="ui-view"></div>
+    <div ng-include="'header.tpl.html'"></div>
+    <div ui-view id="ui-view"></div>
+    <div ng-include="'footer.tpl.html'"></div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-@Scripts.Render("~/js/angular")
-<script src="~/dist/ngApp.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="~/dist/angular.js"></script>
+    <script type="text/javascript" src="~/dist/ngApp.js"></script>
 
 </body>
 </html>

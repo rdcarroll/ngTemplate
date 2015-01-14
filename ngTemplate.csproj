@@ -135,6 +135,7 @@
     <Content Include="Client\src\app\home\home.js" />
     <Content Include="Client\src\app\footer.tpl.html" />
     <None Include="Client\src\index.cshtml" />
+    <Content Include="Client\src\assets\LogoTrans.png" />
     <Content Include="Client\vendor\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Client\vendor\jasmine\jasmine.css" />
     <Content Include="Client\vendor\jasmine\jasmine_favicon.png" />
@@ -485,11 +486,9 @@
     <Content Include="apple-touch-icon-precomposed.png" />
     <Content Include="crossdomain.xml" />
     <Content Include="favicon.ico" />
-    <Content Include="humans.txt" />
     <Content Include="Packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="robots.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -514,7 +513,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\src\assets\" />
     <Folder Include="Client\src\common\security\login\" />
     <Folder Include="Client\src\less\" />
     <Folder Include="Client\test\" />

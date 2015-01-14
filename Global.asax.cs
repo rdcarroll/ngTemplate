@@ -18,7 +18,7 @@ namespace App.ngApp
         protected void Application_Start()
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ViewEngines.Engines.Clear();
 

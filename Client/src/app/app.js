@@ -19,26 +19,10 @@ angular.module('app',
         // ------------------------------------------------------------------------------------------------------------
 
         $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: 'home\Home.tpl.html',
-                controller: 'HomeCtrl'
-
-            })
-            .state('contacts', {
-                url: '/contacts',
-                templateUrl: 'contacts\contacts.tpl.html',
-                controller: 'ContactsCtrl'
-            })
-            //.state('login', {
-            //    url: '/login',
-            //    templateUrl: 'home/home.tpl.html',
-            //    controller: 'LoginCtrl'
-            //})
             .state('otherwise', {
-                url: '*path',
+                url: '/',
                 templateurl: 'home\home.tpl.html',
-                controller: 'error404ctrl'
+                controller: 'HomeCtrl'
             });
 
         $locationProvider.html5Mode(true);

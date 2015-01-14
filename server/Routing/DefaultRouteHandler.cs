@@ -18,11 +18,7 @@ namespace App.ngApp.Routing
 
             var filePath = requestContext.HttpContext.Request.AppRelativeCurrentExecutionFilePath;
 
-            if (filePath == "~/")
-            {
-                filePath = "~/client/src/index.cshtml";
-            }
-
+            filePath = "~/client/src/index.cshtml";
             var handler = WebPageHttpHandler.CreateFromVirtualPath(filePath); // returns NULL if .cshtml file wasn't found
 
             if (handler == null)
