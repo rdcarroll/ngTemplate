@@ -26,7 +26,7 @@ namespace App.ngApp
             engine.AddViewLocationFormat("~/Client/src/{0}.cshtml");
 
             // Add a shared location too, as the lines above are controller specific
-            //engine.AddPartialViewLocationFormat("~/MyThemes/{0}.cshtml");
+            engine.AddPartialViewLocationFormat("~/Client/src/{0}.cshtml");
 
             ViewEngines.Engines.Add(engine);
 
