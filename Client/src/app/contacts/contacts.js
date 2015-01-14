@@ -9,6 +9,12 @@
 
         });
 }])
-.controller('ContactsCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-
+.controller('ContactsCtrl', ['$scope', 'ApiClient', function ($scope, ApiClient) {
+    $scope.contacts = {};
+    var opts = {
+        url : 'api/contacts'
+    }
+    ApiClient.get(opts, function (data) {
+        $scope.contacts = data;
+    });
 }]);

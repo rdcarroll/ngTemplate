@@ -12,11 +12,13 @@ namespace App.ngApp
 
     using System.Web.Mvc;
     using App.ngApp.server.Routing;
+    using System.Web.Http;
 
     public class Application : HttpApplication
     {
         protected void Application_Start()
         {
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
