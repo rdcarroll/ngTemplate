@@ -20,11 +20,7 @@ namespace App.ngApp
 
             bundles.Add(new ScriptBundle("~/js/app").Include(
                 "~/scripts/vendor/angular-ui-router.js",
-                "~/scripts/filters.js",
-                "~/scripts/services.js",
-                "~/scripts/directives.js",
-                "~/scripts/controllers.js",
-                "~/scripts/app.js"));
+                "~/dist/ngApp.js"));
         }
     }
 }

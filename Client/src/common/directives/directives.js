@@ -1,5 +1,4 @@
-﻿'use strict';
-
+﻿
 angular.module('app.directives', [])
 
     .directive('appVersion', ['version', function (version) {

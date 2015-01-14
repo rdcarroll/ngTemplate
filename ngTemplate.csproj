@@ -145,16 +145,16 @@
     <Content Include="Scripts\controllers.spec.js">
       <DependentUpon>controllers.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\directives.js" />
-    <Content Include="Scripts\directives.spec.js">
+    <Content Include="Client\src\common\directives\directives.js" />
+    <Content Include="Client\src\common\directives\directives.spec.js">
       <DependentUpon>directives.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\filters.js" />
-    <Content Include="Scripts\filters.spec.js">
+    <Content Include="Client\src\common\directives\filters.js" />
+    <Content Include="Client\src\common\directives\filters.spec.js">
       <DependentUpon>filters.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\services.js" />
-    <Content Include="Scripts\services.spec.js">
+    <Content Include="Client\src\common\services\services.js" />
+    <Content Include="Client\src\common\services\services.spec.js">
       <DependentUpon>services.js</DependentUpon>
     </Content>
     <Content Include="Scripts\vendor\angular-csp.css" />
@@ -519,9 +519,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Client\src\assets\" />
-    <Folder Include="Client\src\common\directives\" />
     <Folder Include="Client\src\common\security\login\" />
-    <Folder Include="Client\src\common\services\" />
     <Folder Include="Client\src\less\" />
     <Folder Include="Client\test\" />
     <Folder Include="Client\vendor\" />
@@ -555,6 +553,9 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)Client\build-script.bat $(ConfigurationName) $(ProjectName) "$(TargetDir)" "$(ProjectDir)"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
